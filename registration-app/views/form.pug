@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Registration Form
+    link(rel='stylesheet', href='/style.css')
+
+  body
+    .container
+
+      h1 Registration Form
+
+      if errors.length > 0
+        ul.error-list
+          each error in errors
+            li= error.msg
+
+      form(action='/submit' method='POST')
+
+        label Name
+        input(
+          type='text'
+          name='name'
+          value=oldData.name || ''
+        )
+
+        label Email
+        input(
+          type='email'
+          name='email'
+          value=oldData.email || ''
+        )
+
+        label Password
+        input(
+          type='password'
+          name='password'
+        )
+
+        button(type='submit') Register

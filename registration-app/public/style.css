@@ -1,0 +1,42 @@
+body {
+    font-family: Arial;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 350px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: teal;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error-list {
+    color: red;
+}
