@@ -3,8 +3,10 @@ const router = express.Router();
 
 const { body, validationResult } = require('express-validator');
 
+const auth = require('../middleware/auth');
+
 // GET Form Page
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
 
     res.render('form', {
         errors: [],
@@ -12,9 +14,11 @@ router.get('/', (req, res) => {
     });
 });
 
-// POST Form Data
+// POST Form
 router.post(
     '/submit',
+
+    auth,
 
     [
         body('name')
@@ -23,7 +27,7 @@ router.post(
 
         body('email')
             .isEmail()
-            .withMessage('Please enter a valid email'),
+            .withMessage('Enter a valid email'),
 
         body('password')
             .isLength({ min: 6 })
